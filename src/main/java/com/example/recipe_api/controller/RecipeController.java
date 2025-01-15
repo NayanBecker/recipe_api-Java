@@ -22,4 +22,9 @@ public class RecipeController {
     public ResponseEntity<RecipeResponse> find(@RequestParam("name") String name){
         return ResponseEntity.ok().body(recipeService.find(name));
     }
+
+    @GetMapping("/metodoResponseEntity")
+    public ResponseEntity<Object> metodoResponseEntity() {
+        return ResponseEntity.status(400).body("Mensagem de erro");
+    }
 }
